@@ -17,6 +17,8 @@
 		4B77650A22636C5100AC7348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B77650822636C5100AC7348 /* LaunchScreen.storyboard */; };
 		4B77651722643FF600AC7348 /* Canvas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B77651622643FF600AC7348 /* Canvas.storyboard */; };
 		4B7765192264446700AC7348 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7765182264446700AC7348 /* CanvasController.swift */; };
+		4BFB174F2277FC4100507B58 /* pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB174E2277FC4100507B58 /* pixel.swift */; };
+		4BFB17512277FD0100507B58 /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB17502277FD0100507B58 /* Static.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		4B77650B22636C5100AC7348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B77651622643FF600AC7348 /* Canvas.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Canvas.storyboard; sourceTree = "<group>"; };
 		4B7765182264446700AC7348 /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
+		4BFB174E2277FC4100507B58 /* pixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pixel.swift; sourceTree = "<group>"; };
+		4BFB17502277FD0100507B58 /* Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 		4B2BFD91226609440034820C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4BFB17502277FD0100507B58 /* Static.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 				4B2BFD8B22657B0D0034820C /* CanvasVIew.swift */,
 				4B2BFD8D2265901A0034820C /* PaletteView.swift */,
 				4B2BFD8F226598AC0034820C /* PencilToolView.swift */,
+				4BFB174E2277FC4100507B58 /* pixel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 				4B2BFD8C22657B0D0034820C /* CanvasVIew.swift in Sources */,
 				4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */,
 				4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */,
+				4BFB174F2277FC4100507B58 /* pixel.swift in Sources */,
 				4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */,
+				4BFB17512277FD0100507B58 /* Static.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

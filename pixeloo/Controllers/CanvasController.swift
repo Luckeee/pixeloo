@@ -53,15 +53,13 @@ class CanvasController: UIViewController {
     
     func ShowCanvas() {
         
-        let size = CancasSize(width: 64, height: 64)
-        let frame = CGRect(x: 0,y: 20,width: 1024,height: 1024)
+        let size = CancasSize(width: 64, height: 47)
+        let frame = CGRect(x: 0,y: 0,width: SCREEN_WIDTH,height: SCREEN_HEIGHT)
         canvas = CanvasView(frame:frame, size:size)
-        canvas.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 0.8470588235)
         view.addSubview(canvas)
-        
-    
-        
     }
+    
+    
     
 }
 
