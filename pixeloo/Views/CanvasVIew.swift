@@ -28,13 +28,16 @@ class CanvasView : SKView{
     init(frame: CGRect, size:CancasSize) {
         super.init(frame: frame)
         self.size = size
-        canvasScene = SKScene( size: CGSize(width: SCREEN_WIDTH ,height: SCREEN_HEIGHT))
-        presentScene(canvasScene)
+        
         
         sprite = SKSpriteNode()
         let sprite_w = CGFloat(PIXEL_SIZE * size.width)
         let sprite_h = CGFloat(PIXEL_SIZE * size.height)
-        sprite.position = CGPoint(x: (SCREEN_WIDTH -  sprite_w) / 2, y: (SCREEN_HEIGHT -  sprite_h) / 2)
+        
+        canvasScene = SKScene( size: CGSize(width: sprite_w ,height: sprite_h))
+        presentScene(canvasScene)
+        
+        sprite.position = CGPoint(x: 0, y: 0)
         sprite.size = CGSize(width: sprite_w, height: sprite_h)
         
         canvasScene.addChild(sprite)

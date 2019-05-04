@@ -33,7 +33,7 @@ class CanvasController: UIViewController {
     func SetUpScrollView(){
         
         scrollview.maximumZoomScale = 3.0
-        scrollview.minimumZoomScale = 0.5
+        scrollview.minimumZoomScale = 0.1
         scrollview.panGestureRecognizer.minimumNumberOfTouches = 2
         scrollview.panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
         scrollview.pinchGestureRecognizer?.allowedTouchTypes = [UITouch.TouchType.direct.rawValue as NSNumber]
@@ -74,8 +74,8 @@ class CanvasController: UIViewController {
     
     func ShowCanvas() {
         
-        let size = CancasSize(width: 64, height: 47)
-        let frame = CGRect(x: 0,y: 0,width: SCREEN_WIDTH,height: SCREEN_HEIGHT)
+        let size = CancasSize(width: 64, height: 64)
+        let frame = CGRect(x: 0,y: 0,width: PIXEL_SIZE * size.width,height: PIXEL_SIZE * size.height)
         canvas = CanvasView(frame:frame, size:size)
         canvas.translatesAutoresizingMaskIntoConstraints = false
         scrollview.addSubview(canvas)
