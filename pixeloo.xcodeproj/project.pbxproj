@@ -10,6 +10,7 @@
 		4B2BFD8C22657B0D0034820C /* CanvasVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8B22657B0D0034820C /* CanvasVIew.swift */; };
 		4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8D2265901A0034820C /* PaletteView.swift */; };
 		4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8F226598AC0034820C /* PencilToolView.swift */; };
+		4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7DA2227D6CEE0024A07B /* Command.swift */; };
 		4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7764FF22636C4F00AC7348 /* AppDelegate.swift */; };
 		4B77650222636C4F00AC7348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B77650122636C4F00AC7348 /* ViewController.swift */; };
 		4B77650522636C4F00AC7348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B77650322636C4F00AC7348 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		4B2BFD8B22657B0D0034820C /* CanvasVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasVIew.swift; sourceTree = "<group>"; };
 		4B2BFD8D2265901A0034820C /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		4B2BFD8F226598AC0034820C /* PencilToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilToolView.swift; sourceTree = "<group>"; };
+		4B4A7DA2227D6CEE0024A07B /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		4B7764FC22636C4F00AC7348 /* pixeloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pixeloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7764FF22636C4F00AC7348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B77650122636C4F00AC7348 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				4BFB17502277FD0100507B58 /* Static.swift */,
+				4B4A7DA2227D6CEE0024A07B /* Command.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				4B2BFD8C22657B0D0034820C /* CanvasVIew.swift in Sources */,
 				4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */,
 				4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */,
+				4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */,
 				4BFB174F2277FC4100507B58 /* pixel.swift in Sources */,
 				4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */,
 				4BFB17512277FD0100507B58 /* Static.swift in Sources */,
@@ -359,14 +363,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9Q3K5388F;
+				DEVELOPMENT_TEAM = Q48DSL96D2;
 				INFOPLIST_FILE = pixeloo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hata.tech.pixeloo;
+				PRODUCT_BUNDLE_IDENTIFIER = hata.tech.pixelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,14 +382,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9Q3K5388F;
+				DEVELOPMENT_TEAM = Q48DSL96D2;
 				INFOPLIST_FILE = pixeloo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hata.tech.pixeloo;
+				PRODUCT_BUNDLE_IDENTIFIER = hata.tech.pixelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

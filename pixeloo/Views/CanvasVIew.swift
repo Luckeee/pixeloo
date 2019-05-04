@@ -9,12 +9,21 @@
 import Foundation
 import SpriteKit
 
-class CanvasView : SKView {
+class CanvasView : SKView{
     
     var size : CancasSize!
     var canvasScene: SKScene!
     var sprite :SKSpriteNode!
+    
+    // 画布中的所有UI像素对象
     var pixelArray = [[Pixel]]()
+    
+    // 画布中的点
+    var points = [[Point]]()
+    
+    // 历史数据
+    var history = [[[Point]]]()
+    var his_index = 0
     
     init(frame: CGRect, size:CancasSize) {
         super.init(frame: frame)
@@ -36,6 +45,7 @@ class CanvasView : SKView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // 初始化
     override func didMoveToSuperview() {
         print("didMoveToSuperview ")
         
@@ -43,6 +53,7 @@ class CanvasView : SKView {
         for h in 0..<size.height {
             
             var tmp = [Pixel]()
+            var tmp_points = [Point]()
             for w in 0..<size.width {
                 let pixel = Pixel()
 
@@ -51,34 +62,70 @@ class CanvasView : SKView {
                 tmp.append(pixel)
                 
                 sprite.addChild(pixel)
+                tmp_points.append(Point(x:w, y:h, color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
             }
+            
             pixelArray.append(tmp)
+            points.append(tmp_points)
         }
+        history.append(points)
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
         for touch in touches {
             handleTouch(touch: touch, type : 0)
         }
+        
+        print("touchesBegan")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             handleTouch(touch: touch , type : 1)
         }
+        print("touchesMoved")
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         tmp_pos = nil
+        points = history[his_index]
+        ShowWithPoints(points: points)
+        print("touchesCancelled")
     }
  
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         tmp_pos = nil
+        
+        let need_delete = history.count - his_index - 1
+        
+        if need_delete > 0 {
+            for _ in 1...need_delete {
+                history.removeLast()
+            }
+        }
+        
+        history.append(points)
+        his_index = history.count - 1
+        
+        print("touchesEnded")
     }
     
     var tmp_pos : CGPoint!
     
     func handleTouch(touch : UITouch, type : Int) {
+        
+        var tar_color = palete_color
+        
+        switch pen_type {
+        case .pencil:
+            tar_color = palete_color
+        case .eraser:
+            tar_color = UIColor.white
+        default:
+            tar_color = palete_color
+        }
         
         var poses : [Point]
         
@@ -93,18 +140,20 @@ class CanvasView : SKView {
         tmp_pos = touch.location(in: sprite)
         
         for pos in poses {
-            if pos.y > pixelArray.count ||  pos.y < 0 {
-                return
+            if pos.y > size.height - 1  ||  pos.y < 0 {
+                continue
             }
             
-            if  pos.x < 0 ||  pos.y > pixelArray[0].count {
-                return
+            if  pos.x < 0 ||  pos.x > size.width - 1 {
+                continue
             }
             
-            pixelArray[pos.y][pos.x].fillColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            pixelArray[pos.y][pos.x].fillColor = tar_color
+            points[pos.y][pos.x].color = tar_color
         }
     }
     
+    // 填补两点间的像素点
     func caculateoo(pointx : CGPoint, pointy : CGPoint ) -> [Point]  {
         var poss = [Point]()
         
@@ -127,11 +176,38 @@ class CanvasView : SKView {
         return poss
     }
     
-    func amcolor() -> UIColor {
-        let red = CGFloat(arc4random()%256)/255.0
-        let green = CGFloat(arc4random()%256)/255.0
-        let blue = CGFloat(arc4random()%256)/255.0
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    func back() {
+        if his_index <= 0 {
+            return
+        }
+        
+        his_index = his_index - 1
+        
+        points = history[his_index]
+        
+        ShowWithPoints(points: points)
+    }
+    
+    func forward() {
+        if his_index == history.count - 1 {
+            return
+        }
+    
+        his_index = his_index + 1
+        
+        points = history[his_index]
+        
+        ShowWithPoints(points: points)
+    }
+    
+    
+    func ShowWithPoints(points:[[Point]]) {
+        
+        for pp in points {
+            for p in pp {
+             pixelArray[p.y][p.x].fillColor = p.color
+            }
+        }
     }
 }
 

@@ -14,8 +14,7 @@ class PaletteView : UICollectionView , UICollectionViewDelegate, UICollectionVie
     let Identifier       = "CollectionViewCell"
     let headerIdentifier = "CollectionHeaderView"
     let footIdentifier   = "CollectionFootView"
-    
-    public var selectcolor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1);
+
     var colors = [UIColor]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -41,8 +40,8 @@ class PaletteView : UICollectionView , UICollectionViewDelegate, UICollectionVie
     
     // cell  点击事件
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectcolor = colors[indexPath.row]
-        print(indexPath.row,selectcolor)
+        palete_color = colors[indexPath.row]
+        print(indexPath.row,palete_color)
     }
     
     // 返回 cell 的数量

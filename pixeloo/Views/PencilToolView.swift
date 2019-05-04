@@ -11,10 +11,8 @@ import UIKit
 
 class PencilToolView: UIView {
     
-    var Tools = ["select","pencil","eraser"]
-    
-    public var currentTool = "pencil"
-    
+    var Tools = ["select","pencil","eraser","back", "forward"]
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = #colorLiteral(red: 0.6750302911, green: 0.2017385662, blue: 0.2722268105, alpha: 1)
@@ -50,11 +48,30 @@ class PencilToolView: UIView {
     
     @objc func OnBtnClicked(sender:UIButton?) {
         
-        currentTool = Tools[sender?.tag ?? 0]
-        
-        print("currentTool" , currentTool)
-    }
+        let str = Tools[sender?.tag ?? 0]
 
+        if str == "pencil" {
+            pen_type = PENTYPE.pencil
+        }
+        
+        if str == "eraser" {
+            pen_type = PENTYPE.eraser
+        }
+        
+        if str == "select" {
+            pen_type = PENTYPE.clear
+        }
+        
+        if str == "back" {
+            canvas.back()
+        }
+        
+        if str == "forward" {
+            canvas.forward()
+        }
+        
+        print("currentTool" , pen_type)
+    }
     
 }
 

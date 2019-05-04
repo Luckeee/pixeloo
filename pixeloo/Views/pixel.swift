@@ -15,10 +15,10 @@ class Pixel: SKShapeNode {
         super.init()
         
         self.fillColor = .white
-        self.strokeColor = UIColor.gray
+        self.strokeColor = UIColor.black
         
         // FIXME: Adjust line width to scroll rate
-        self.lineWidth = 1
+        self.lineWidth = 0.5
         
         let rect = UIBezierPath(rect: CGRect(x: 0, y: 0, width: PIXEL_SIZE, height: PIXEL_SIZE))
         self.path = rect.cgPath
@@ -31,10 +31,17 @@ class Pixel: SKShapeNode {
     }
 }
 
-class Point{
+struct Point{
     
     var x : Int = 0
     var y : Int = 0
+    var color : UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
+    init(x:Int,y:Int,color:UIColor) {
+        self.x = x
+        self.y = y
+        self.color = color
+    }
     
     init(cgpoint : CGPoint) {
         x = Int(floor(cgpoint.x / CGFloat(PIXEL_SIZE)))

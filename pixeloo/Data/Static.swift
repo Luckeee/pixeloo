@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-let DARK_GREY = UIColor(red: 0.10, green: 0.10, blue: 0.10, alpha: 1.0)
-let LIGHT_GREY = UIColor(red: 0.19, green: 0.19, blue: 0.19, alpha: 1.0)
-
 // every Pixel
 let PIXEL_SIZE = 16
 
 // FIXME: Make this dynamic
-let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+let SCREEN_HEIGHT = UIScreen.main.bounds.size.height - 20
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 // Maximum amount of pixels shown on screen when zooming in.
-let MAX_AMOUNT_PIXEL_PER_SCREEN: CGFloat = 4.0
-let MAX_ZOOM_OUT: CGFloat = 0.75
+let MAX_ZOOM: CGFloat = 2
+let MIN_ZOOM: CGFloat = 0.4
+
 // Tolerance for checking equality of UIColors.
 let COLOR_EQUALITY_TOLERANCE: CGFloat = 0.001
 
@@ -35,3 +33,10 @@ let ICON_HEIGHT: CGFloat = ICON_WIDTH
 /// is not located directly under the finger of the user
 /// and thus cannot be seen.
 let PIPETTE_TOOL_OFFSET: CGFloat = 10.0
+
+
+// 全局变量
+
+var palete_color : UIColor = UIColor.black
+
+var pen_type = PENTYPE.pencil
