@@ -11,6 +11,7 @@
 		4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8D2265901A0034820C /* PaletteView.swift */; };
 		4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8F226598AC0034820C /* PencilToolView.swift */; };
 		4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7DA2227D6CEE0024A07B /* Command.swift */; };
+		4B4A7DB7227EED610024A07B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4B4A7DB6227EED610024A07B /* Podfile */; };
 		4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7764FF22636C4F00AC7348 /* AppDelegate.swift */; };
 		4B77650222636C4F00AC7348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B77650122636C4F00AC7348 /* ViewController.swift */; };
 		4B77650522636C4F00AC7348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B77650322636C4F00AC7348 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		4B7765192264446700AC7348 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7765182264446700AC7348 /* CanvasController.swift */; };
 		4BFB174F2277FC4100507B58 /* pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB174E2277FC4100507B58 /* pixel.swift */; };
 		4BFB17512277FD0100507B58 /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB17502277FD0100507B58 /* Static.swift */; };
+		C10DFCD10AF9D2FB9CB0034B /* Pods_pixeloo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17F7F9C9B0DB1F40B7DCE44 /* Pods_pixeloo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		4B2BFD8D2265901A0034820C /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		4B2BFD8F226598AC0034820C /* PencilToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilToolView.swift; sourceTree = "<group>"; };
 		4B4A7DA2227D6CEE0024A07B /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		4B4A7DB6227EED610024A07B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		4B7764FC22636C4F00AC7348 /* pixeloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pixeloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7764FF22636C4F00AC7348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B77650122636C4F00AC7348 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,9 @@
 		4B7765182264446700AC7348 /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
 		4BFB174E2277FC4100507B58 /* pixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pixel.swift; sourceTree = "<group>"; };
 		4BFB17502277FD0100507B58 /* Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
+		541C0E17F4C1352744EB68DF /* Pods-pixeloo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pixeloo.release.xcconfig"; path = "Target Support Files/Pods-pixeloo/Pods-pixeloo.release.xcconfig"; sourceTree = "<group>"; };
+		B17F7F9C9B0DB1F40B7DCE44 /* Pods_pixeloo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pixeloo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB12D2836631532558A81BC7 /* Pods-pixeloo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pixeloo.debug.xcconfig"; path = "Target Support Files/Pods-pixeloo/Pods-pixeloo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +51,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10DFCD10AF9D2FB9CB0034B /* Pods_pixeloo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F5C2ADF9D7C1F1B40398872 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B17F7F9C9B0DB1F40B7DCE44 /* Pods_pixeloo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B2BFD91226609440034820C /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +78,11 @@
 		4B7764F322636C4F00AC7348 = {
 			isa = PBXGroup;
 			children = (
+				4B4A7DB6227EED610024A07B /* Podfile */,
 				4B7764FE22636C4F00AC7348 /* pixeloo */,
 				4B7764FD22636C4F00AC7348 /* Products */,
+				AA49AA77F2324B7A138F73E6 /* Pods */,
+				2F5C2ADF9D7C1F1B40398872 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +154,16 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
+		AA49AA77F2324B7A138F73E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB12D2836631532558A81BC7 /* Pods-pixeloo.debug.xcconfig */,
+				541C0E17F4C1352744EB68DF /* Pods-pixeloo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B77650E22636C5100AC7348 /* Build configuration list for PBXNativeTarget "pixeloo" */;
 			buildPhases = (
+				E7933D12AC85B3C7D0C40C3C /* [CP] Check Pods Manifest.lock */,
 				4B7764F822636C4F00AC7348 /* Sources */,
 				4B7764F922636C4F00AC7348 /* Frameworks */,
 				4B7764FA22636C4F00AC7348 /* Resources */,
+				D6E1B4697A43ACBDAD40814D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4A7DB7227EED610024A07B /* Podfile in Resources */,
 				4B77651722643FF600AC7348 /* Canvas.storyboard in Resources */,
 				4B77650A22636C5100AC7348 /* LaunchScreen.storyboard in Resources */,
 				4B77650722636C5100AC7348 /* Assets.xcassets in Resources */,
@@ -202,6 +233,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D6E1B4697A43ACBDAD40814D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pixeloo/Pods-pixeloo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EFColorPicker/EFColorPicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFColorPicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pixeloo/Pods-pixeloo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7933D12AC85B3C7D0C40C3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pixeloo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B7764F822636C4F00AC7348 /* Sources */ = {
@@ -360,6 +438,7 @@
 		};
 		4B77650F22636C5100AC7348 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB12D2836631532558A81BC7 /* Pods-pixeloo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +458,7 @@
 		};
 		4B77651022636C5100AC7348 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 541C0E17F4C1352744EB68DF /* Pods-pixeloo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

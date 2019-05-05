@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func OnAddTouchUpInside(_ sender: UIButton) {
-        print("Button Touch Up inside")
         
         let canvasBoard = UIStoryboard(name:"Canvas",bundle:nil)
         let canvasController = canvasBoard.instantiateViewController(withIdentifier: "CanvasController")

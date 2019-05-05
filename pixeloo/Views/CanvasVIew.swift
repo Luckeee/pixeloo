@@ -50,7 +50,6 @@ class CanvasView : SKView{
     
     // 初始化
     override func didMoveToSuperview() {
-        print("didMoveToSuperview ")
         
         //  创建 size 个sksprite
         for h in 0..<size.height {
@@ -80,22 +79,18 @@ class CanvasView : SKView{
         for touch in touches {
             handleTouch(touch: touch, type : 0)
         }
-        
-        print("touchesBegan")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             handleTouch(touch: touch , type : 1)
         }
-        print("touchesMoved")
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         tmp_pos = nil
         points = history[his_index]
         ShowWithPoints(points: points)
-        print("touchesCancelled")
     }
  
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -111,8 +106,6 @@ class CanvasView : SKView{
         
         history.append(points)
         his_index = history.count - 1
-        
-        print("touchesEnded")
     }
     
     var tmp_pos : CGPoint!

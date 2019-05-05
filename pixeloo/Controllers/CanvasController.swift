@@ -17,9 +17,15 @@ var canvas : CanvasView!
 class CanvasController: UIViewController {
     
     @IBOutlet weak var scrollview: UIScrollView!
+
+    @IBOutlet weak var trashCollection: UICollectionView!
+    
+    @IBOutlet weak var transImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         SetUpScrollView()
         ShowCanvas()
         ShowPalette()
@@ -53,13 +59,15 @@ class CanvasController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         
         layout.itemSize = CGSize(width: 30,height: 30)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
         
-        let frame = CGRect(x: 0,y: 100,width: 90,height: 200)
+        let frame = CGRect(x: 0,y: 100,width: 92,height: 500)
         
         palette = PaletteView(frame: frame, collectionViewLayout:layout)
-        
+        palette.trashCollection = self.trashCollection
+        palette.trashImage = self.transImage
+        self.transImage.alpha = 0
         view.addSubview(palette)
     }
     

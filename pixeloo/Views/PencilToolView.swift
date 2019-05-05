@@ -69,8 +69,6 @@ class PencilToolView: UIView {
         if str == "forward" {
             canvas.forward()
         }
-        
-        print("currentTool" , pen_type)
     }
     
 }
