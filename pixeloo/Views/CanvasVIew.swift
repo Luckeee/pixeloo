@@ -11,7 +11,7 @@ import SpriteKit
 
 class CanvasView : SKView{
     
-    var size : CancasSize!
+    var c_size : CancasSize!
     var canvasScene: SKScene!
     var sprite :SKSpriteNode!
     
@@ -25,14 +25,13 @@ class CanvasView : SKView{
     var history = [[[Point]]]()
     var his_index = 0
     
-    init(frame: CGRect, size:CancasSize) {
+    init(frame: CGRect, c_size:CancasSize) {
         super.init(frame: frame)
-        self.size = size
-        
+        self.c_size = c_size
         
         sprite = SKSpriteNode()
-        let sprite_w = CGFloat(PIXEL_SIZE * size.width)
-        let sprite_h = CGFloat(PIXEL_SIZE * size.height)
+        let sprite_w = CGFloat(PIXEL_SIZE * c_size.width)
+        let sprite_h = CGFloat(PIXEL_SIZE * c_size.height)
         
         canvasScene = SKScene( size: CGSize(width: sprite_w ,height: sprite_h))
         presentScene(canvasScene)
@@ -52,11 +51,11 @@ class CanvasView : SKView{
     override func didMoveToSuperview() {
         
         //  创建 size 个sksprite
-        for h in 0..<size.height {
+        for h in 0..<c_size.height {
             
             var tmp = [Pixel]()
             var tmp_points = [Point]()
-            for w in 0..<size.width {
+            for w in 0..<c_size.width {
                 let pixel = Pixel()
 
                 pixel.name = String.init(format: "%d_%d", w,h)
@@ -136,11 +135,11 @@ class CanvasView : SKView{
         tmp_pos = touch.location(in: sprite)
         
         for pos in poses {
-            if pos.y > size.height - 1  ||  pos.y < 0 {
+            if pos.y > c_size.height - 1  ||  pos.y < 0 {
                 continue
             }
             
-            if  pos.x < 0 ||  pos.x > size.width - 1 {
+            if  pos.x < 0 ||  pos.x > c_size.width - 1 {
                 continue
             }
             

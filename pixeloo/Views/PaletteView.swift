@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import EFColorPicker
 
 class PaletteView : UICollectionView  {
     
@@ -17,6 +16,7 @@ class PaletteView : UICollectionView  {
     let footIdentifier   = "CollectionFootView"
 
     var colors = [UIColor]()
+    var controller : CanvasController!
     
     public var trashCollection: UICollectionView!
     public var trashImage: UIImageView!
@@ -35,6 +35,7 @@ class PaletteView : UICollectionView  {
         self.dragInteractionEnabled = true
         // 注册cell
         self.register(Palette_Cell.self, forCellWithReuseIdentifier: Identifier)
+        self.register(CollectionFootView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footIdentifier)
         
         InitColorList()
         
@@ -127,6 +128,12 @@ extension PaletteView: UICollectionViewDataSource{
         cell.backgroundColor = colors[indexPath.row]
         cell.accessibilityLabel = String(format:"%ditem",indexPath.row)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        let footView : CollectionFootView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footIdentifier, for: indexPath) as! CollectionFootView
+        footView.controller = self.controller
+        return footView
     }
 }
 
@@ -237,3 +244,36 @@ class Palette_Cell: UICollectionViewCell {
     }
     
 }
+
+class CollectionFootView: UICollectionReusableView {
+    
+    var color_btn : UIButton!
+    var controller : CanvasController!
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = UIColor.white
+        
+        let c_frame = CGRect(x: 10, y: 10, width: 70, height: 20)
+        
+        color_btn = UIButton(frame: c_frame)
+        color_btn.backgroundColor = UIColor.green
+        
+        self.addSubview(color_btn)
+        
+        color_btn.addTarget(self, action:#selector(touchSelect(sender:)), for: .touchUpInside)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    @objc func touchSelect (sender: UITapGestureRecognizer){
+        let alert = UIAlertController(style: .alert)
+        alert.addColorPicker(color: UIColor(hex: 0xFF2DC6)) { color in self.color_btn.backgroundColor = color }
+        alert.addAction(title: "Cancel", style: .cancel)
+        alert.show()
+    }
+}
+

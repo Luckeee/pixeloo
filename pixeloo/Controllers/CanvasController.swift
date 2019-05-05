@@ -24,7 +24,7 @@ class CanvasController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         SetUpScrollView()
         ShowCanvas()
@@ -61,12 +61,14 @@ class CanvasController: UIViewController {
         layout.itemSize = CGSize(width: 30,height: 30)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
+        layout.footerReferenceSize = CGSize(width: 92, height: 50)
         
         let frame = CGRect(x: 0,y: 100,width: 92,height: 500)
         
         palette = PaletteView(frame: frame, collectionViewLayout:layout)
         palette.trashCollection = self.trashCollection
         palette.trashImage = self.transImage
+        palette.controller = self
         self.transImage.alpha = 0
         view.addSubview(palette)
     }
@@ -84,7 +86,7 @@ class CanvasController: UIViewController {
         
         let size = CancasSize(width: 64, height: 64)
         let frame = CGRect(x: 0,y: 0,width: PIXEL_SIZE * size.width,height: PIXEL_SIZE * size.height)
-        canvas = CanvasView(frame:frame, size:size)
+        canvas = CanvasView(frame:frame, c_size:size)
         canvas.translatesAutoresizingMaskIntoConstraints = false
         scrollview.addSubview(canvas)
     }
@@ -94,6 +96,9 @@ class CanvasController: UIViewController {
         super.viewDidAppear(animated)
         scrollview.flashScrollIndicators()
     }
+    
+}
+extension CanvasController: UIPopoverPresentationControllerDelegate {
     
 }
 

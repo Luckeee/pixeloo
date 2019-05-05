@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
+    var isColorTextFieldHidden: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,7 +23,7 @@ class ViewController: UIViewController {
         let canvasBoard = UIStoryboard(name:"Canvas",bundle:nil)
         let canvasController = canvasBoard.instantiateViewController(withIdentifier: "CanvasController")
         self.present(canvasController, animated: true, completion: nil)
-
+        
     }
 
 }
