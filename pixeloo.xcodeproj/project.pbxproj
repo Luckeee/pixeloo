@@ -11,26 +11,13 @@
 		4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8D2265901A0034820C /* PaletteView.swift */; };
 		4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8F226598AC0034820C /* PencilToolView.swift */; };
 		4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7DA2227D6CEE0024A07B /* Command.swift */; };
-		4B4A7E95227F2FA10024A07B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E46227F2FA10024A07B /* Array+Extensions.swift */; };
-		4B4A7E96227F2FA10024A07B /* UISegmentedControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E47227F2FA10024A07B /* UISegmentedControl+Extensions.swift */; };
-		4B4A7E97227F2FA10024A07B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E48227F2FA10024A07B /* UIImageView+Extensions.swift */; };
 		4B4A7E98227F2FA10024A07B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E49227F2FA10024A07B /* UIViewController+Extensions.swift */; };
 		4B4A7E99227F2FA10024A07B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E4A227F2FA10024A07B /* UIView+Extensions.swift */; };
-		4B4A7E9C227F2FA10024A07B /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E4D227F2FA10024A07B /* UITextView+Extensions.swift */; };
 		4B4A7E9D227F2FA10024A07B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E4E227F2FA10024A07B /* UIColor+Extensions.swift */; };
-		4B4A7E9E227F2FA10024A07B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E4F227F2FA10024A07B /* UIImage+Extensions.swift */; };
-		4B4A7E9F227F2FA10024A07B /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E50227F2FA10024A07B /* UISearchBar+Extensions.swift */; };
 		4B4A7EA0227F2FA10024A07B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E51227F2FA10024A07B /* UIApplication+Extensions.swift */; };
 		4B4A7EA1227F2FA10024A07B /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E52227F2FA10024A07B /* UIAlertController+Extensions.swift */; };
-		4B4A7EA2227F2FA10024A07B /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E53227F2FA10024A07B /* Optional+Extensions.swift */; };
-		4B4A7EA3227F2FA10024A07B /* Common+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E54227F2FA10024A07B /* Common+Extensions.swift */; };
-		4B4A7EA4227F2FA10024A07B /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E55227F2FA10024A07B /* Locale+Extensions.swift */; };
-		4B4A7EA5227F2FA10024A07B /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E56227F2FA10024A07B /* UITextField+Extensions.swift */; };
-		4B4A7EA6227F2FA10024A07B /* AttributedTextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E59227F2FA10024A07B /* AttributedTextBlock.swift */; };
 		4B4A7EBD227F2FA10024A07B /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E81227F2FA10024A07B /* ColorPickerViewController.swift */; };
-		4B4A7EC6227F2FA10024A07B /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E91227F2FA10024A07B /* SegmentedControl.swift */; };
 		4B4A7EC7227F2FA10024A07B /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E92227F2FA10024A07B /* GradientSlider.swift */; };
-		4B4A7EC8227F2FA10024A07B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E93227F2FA10024A07B /* TextField.swift */; };
 		4B4A7ECB227F37CE0024A07B /* ColorPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4A7ECA227F37CE0024A07B /* ColorPicker.storyboard */; };
 		4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7764FF22636C4F00AC7348 /* AppDelegate.swift */; };
 		4B77650222636C4F00AC7348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B77650122636C4F00AC7348 /* ViewController.swift */; };
@@ -48,26 +35,13 @@
 		4B2BFD8D2265901A0034820C /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		4B2BFD8F226598AC0034820C /* PencilToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilToolView.swift; sourceTree = "<group>"; };
 		4B4A7DA2227D6CEE0024A07B /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		4B4A7E46227F2FA10024A07B /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E47227F2FA10024A07B /* UISegmentedControl+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E48227F2FA10024A07B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		4B4A7E49227F2FA10024A07B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4B4A7E4A227F2FA10024A07B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E4D227F2FA10024A07B /* UITextView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
 		4B4A7E4E227F2FA10024A07B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E4F227F2FA10024A07B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E50227F2FA10024A07B /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
 		4B4A7E51227F2FA10024A07B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		4B4A7E52227F2FA10024A07B /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E53227F2FA10024A07B /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E54227F2FA10024A07B /* Common+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E55227F2FA10024A07B /* Locale+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E56227F2FA10024A07B /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		4B4A7E59227F2FA10024A07B /* AttributedTextBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedTextBlock.swift; sourceTree = "<group>"; };
 		4B4A7E81227F2FA10024A07B /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
-		4B4A7E91227F2FA10024A07B /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		4B4A7E92227F2FA10024A07B /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
-		4B4A7E93227F2FA10024A07B /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		4B4A7ECA227F37CE0024A07B /* ColorPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorPicker.storyboard; sourceTree = "<group>"; };
 		4B7764FC22636C4F00AC7348 /* pixeloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pixeloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7764FF22636C4F00AC7348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,53 +76,26 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		4B4A7E44227F2FA10024A07B /* Source */ = {
+		4B4A7E44227F2FA10024A07B /* color_picker */ = {
 			isa = PBXGroup;
 			children = (
 				4B4A7E45227F2FA10024A07B /* Extensions */,
-				4B4A7E57227F2FA10024A07B /* Viewers */,
 				4B4A7E5B227F2FA10024A07B /* Pickers */,
 				4B4A7E8F227F2FA10024A07B /* Views */,
 			);
-			path = Source;
+			path = color_picker;
 			sourceTree = "<group>";
 		};
 		4B4A7E45227F2FA10024A07B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4B4A7E46227F2FA10024A07B /* Array+Extensions.swift */,
-				4B4A7E47227F2FA10024A07B /* UISegmentedControl+Extensions.swift */,
-				4B4A7E48227F2FA10024A07B /* UIImageView+Extensions.swift */,
 				4B4A7E49227F2FA10024A07B /* UIViewController+Extensions.swift */,
 				4B4A7E4A227F2FA10024A07B /* UIView+Extensions.swift */,
-				4B4A7E4D227F2FA10024A07B /* UITextView+Extensions.swift */,
 				4B4A7E4E227F2FA10024A07B /* UIColor+Extensions.swift */,
-				4B4A7E4F227F2FA10024A07B /* UIImage+Extensions.swift */,
-				4B4A7E50227F2FA10024A07B /* UISearchBar+Extensions.swift */,
 				4B4A7E51227F2FA10024A07B /* UIApplication+Extensions.swift */,
 				4B4A7E52227F2FA10024A07B /* UIAlertController+Extensions.swift */,
-				4B4A7E53227F2FA10024A07B /* Optional+Extensions.swift */,
-				4B4A7E54227F2FA10024A07B /* Common+Extensions.swift */,
-				4B4A7E55227F2FA10024A07B /* Locale+Extensions.swift */,
-				4B4A7E56227F2FA10024A07B /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4B4A7E57227F2FA10024A07B /* Viewers */ = {
-			isa = PBXGroup;
-			children = (
-				4B4A7E58227F2FA10024A07B /* Models */,
-			);
-			path = Viewers;
-			sourceTree = "<group>";
-		};
-		4B4A7E58227F2FA10024A07B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4B4A7E59227F2FA10024A07B /* AttributedTextBlock.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		4B4A7E5B227F2FA10024A07B /* Pickers */ = {
@@ -170,9 +117,7 @@
 		4B4A7E8F227F2FA10024A07B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4B4A7E91227F2FA10024A07B /* SegmentedControl.swift */,
 				4B4A7E92227F2FA10024A07B /* GradientSlider.swift */,
-				4B4A7E93227F2FA10024A07B /* TextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,7 +141,7 @@
 		4B7764FE22636C4F00AC7348 /* pixeloo */ = {
 			isa = PBXGroup;
 			children = (
-				4B4A7E44227F2FA10024A07B /* Source */,
+				4B4A7E44227F2FA10024A07B /* color_picker */,
 				4B2BFD91226609440034820C /* Data */,
 				4B77651522636D7C00AC7348 /* Default */,
 				4B77651422636D5600AC7348 /* Resources */,
@@ -330,33 +275,20 @@
 			files = (
 				4B4A7E99227F2FA10024A07B /* UIView+Extensions.swift in Sources */,
 				4B77650222636C4F00AC7348 /* ViewController.swift in Sources */,
-				4B4A7EC8227F2FA10024A07B /* TextField.swift in Sources */,
-				4B4A7E95227F2FA10024A07B /* Array+Extensions.swift in Sources */,
 				4B4A7E98227F2FA10024A07B /* UIViewController+Extensions.swift in Sources */,
 				4B7765192264446700AC7348 /* CanvasController.swift in Sources */,
 				4B4A7E9D227F2FA10024A07B /* UIColor+Extensions.swift in Sources */,
 				4B2BFD8C22657B0D0034820C /* CanvasVIew.swift in Sources */,
-				4B4A7E9C227F2FA10024A07B /* UITextView+Extensions.swift in Sources */,
 				4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */,
 				4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */,
-				4B4A7E97227F2FA10024A07B /* UIImageView+Extensions.swift in Sources */,
 				4B4A7EC7227F2FA10024A07B /* GradientSlider.swift in Sources */,
-				4B4A7EA5227F2FA10024A07B /* UITextField+Extensions.swift in Sources */,
-				4B4A7EA6227F2FA10024A07B /* AttributedTextBlock.swift in Sources */,
 				4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */,
 				4B4A7EBD227F2FA10024A07B /* ColorPickerViewController.swift in Sources */,
-				4B4A7EA4227F2FA10024A07B /* Locale+Extensions.swift in Sources */,
 				4B4A7EA1227F2FA10024A07B /* UIAlertController+Extensions.swift in Sources */,
 				4B4A7EA0227F2FA10024A07B /* UIApplication+Extensions.swift in Sources */,
-				4B4A7EC6227F2FA10024A07B /* SegmentedControl.swift in Sources */,
 				4BFB174F2277FC4100507B58 /* pixel.swift in Sources */,
 				4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */,
-				4B4A7E9E227F2FA10024A07B /* UIImage+Extensions.swift in Sources */,
-				4B4A7EA2227F2FA10024A07B /* Optional+Extensions.swift in Sources */,
 				4BFB17512277FD0100507B58 /* Static.swift in Sources */,
-				4B4A7E96227F2FA10024A07B /* UISegmentedControl+Extensions.swift in Sources */,
-				4B4A7EA3227F2FA10024A07B /* Common+Extensions.swift in Sources */,
-				4B4A7E9F227F2FA10024A07B /* UISearchBar+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

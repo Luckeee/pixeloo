@@ -21,11 +21,9 @@ extension UIAlertController {
         
         //self.responds(to: #selector(getter: popoverPresentationController))
         if let source = source {
-            Log("----- source")
             popoverPresentationController?.sourceView = source
             popoverPresentationController?.sourceRect = source.bounds
         } else if isPad, let source = root, style == .actionSheet {
-            Log("----- is pad")
             popoverPresentationController?.sourceView = source
             popoverPresentationController?.sourceRect = CGRect(x: source.bounds.midX, y: source.bounds.midY, width: 0, height: 0)
             //popoverPresentationController?.permittedArrowDirections = .down

@@ -85,8 +85,7 @@ class ColorPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Log("preferredHeight = \(preferredHeight)")
-        
+                
         saturationSlider.minColor = .white
         brightnessSlider.minColor = .black
         hueSlider.hasRainbow = true
@@ -140,7 +139,6 @@ class ColorPickerViewController: UIViewController {
     func updateColorView() {
         colorView.backgroundColor = color
         selection?(color)
-        Log("set color = \(color.hexString)")
     }
 }
 
