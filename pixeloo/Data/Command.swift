@@ -9,14 +9,15 @@
 import Foundation
 import UIKit
 
+
+// not use
 class Command{
     
     var PenType = PENTYPE.pencil
     var color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     var points = [Point]()
-    
-    
+
 }
 
 

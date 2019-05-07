@@ -17,14 +17,9 @@ var canvas : CanvasView!
 class CanvasController: UIViewController {
     
     @IBOutlet weak var scrollview: UIScrollView!
-
-    @IBOutlet weak var trashCollection: UICollectionView!
-    
-    @IBOutlet weak var transImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         SetUpScrollView()
         ShowCanvas()
@@ -56,26 +51,28 @@ class CanvasController: UIViewController {
     
     func ShowPalette(){
         
-        let layout = UICollectionViewFlowLayout()
+        let width :CGFloat = 60
+        let height :CGFloat = 500
         
-        layout.itemSize = CGSize(width: 30,height: 30)
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
-        layout.footerReferenceSize = CGSize(width: 92, height: 50)
+        let x :CGFloat = 0
+        let y = (view.frame.height - height) / 2
         
-        let frame = CGRect(x: 0,y: 100,width: 92,height: 500)
+        let frame = CGRect(x: x,y: y,width: width,height: height)
         
-        palette = PaletteView(frame: frame, collectionViewLayout:layout)
-        palette.trashCollection = self.trashCollection
-        palette.trashImage = self.transImage
-        palette.controller = self
-        self.transImage.alpha = 0
+        palette = PaletteView(frame: frame)
+
         view.addSubview(palette)
     }
     
     func ShowPencilTool(){
         
-        let frame = CGRect(x: 100, y: 20, width: 300, height: 40)
+        let width :CGFloat = 50
+        let height :CGFloat = 300
+        
+        let x = view.frame.width - width
+        let y = (view.frame.height - height) / 2
+        
+        let frame = CGRect(x: x, y: y, width: width, height: height)
         
         penciltool = PencilToolView(frame: frame)
         
@@ -91,14 +88,17 @@ class CanvasController: UIViewController {
         scrollview.addSubview(canvas)
     }
 
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollview.flashScrollIndicators()
+        scrollview.backgroundColor = #colorLiteral(red: 0.503008008, green: 0.5034076571, blue: 0.5030698776, alpha: 1)
     }
     
-}
-extension CanvasController: UIPopoverPresentationControllerDelegate {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        palette.frame.origin = CGPoint(x: 0, y: (size.height - palette.frame.size.height) / 2)
+        penciltool.frame.origin = CGPoint(x:size.width - penciltool.frame.size.width , y: (size.height - penciltool.frame.size.height) / 2)
+    }
     
 }
 
@@ -140,5 +140,5 @@ extension CanvasController: UIScrollViewDelegate {
             canvas.setNeedsDisplay()
         }
     }
-    
+
 }

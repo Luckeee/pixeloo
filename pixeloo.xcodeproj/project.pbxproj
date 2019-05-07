@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B2BFD8C22657B0D0034820C /* CanvasVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8B22657B0D0034820C /* CanvasVIew.swift */; };
-		4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8D2265901A0034820C /* PaletteView.swift */; };
+		4B2BFD8E2265901A0034820C /* ColorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8D2265901A0034820C /* ColorCollectionView.swift */; };
 		4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2BFD8F226598AC0034820C /* PencilToolView.swift */; };
 		4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7DA2227D6CEE0024A07B /* Command.swift */; };
 		4B4A7E98227F2FA10024A07B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E49227F2FA10024A07B /* UIViewController+Extensions.swift */; };
@@ -19,6 +19,8 @@
 		4B4A7EBD227F2FA10024A07B /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E81227F2FA10024A07B /* ColorPickerViewController.swift */; };
 		4B4A7EC7227F2FA10024A07B /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7E92227F2FA10024A07B /* GradientSlider.swift */; };
 		4B4A7ECB227F37CE0024A07B /* ColorPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4A7ECA227F37CE0024A07B /* ColorPicker.storyboard */; };
+		4B4A7ECD227FD98C0024A07B /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7ECC227FD98C0024A07B /* PaletteView.swift */; };
+		4B4A7ED2228120C70024A07B /* PictureExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A7ED1228120C70024A07B /* PictureExporter.swift */; };
 		4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7764FF22636C4F00AC7348 /* AppDelegate.swift */; };
 		4B77650222636C4F00AC7348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B77650122636C4F00AC7348 /* ViewController.swift */; };
 		4B77650522636C4F00AC7348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B77650322636C4F00AC7348 /* Main.storyboard */; };
@@ -32,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		4B2BFD8B22657B0D0034820C /* CanvasVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasVIew.swift; sourceTree = "<group>"; };
-		4B2BFD8D2265901A0034820C /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
+		4B2BFD8D2265901A0034820C /* ColorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionView.swift; sourceTree = "<group>"; };
 		4B2BFD8F226598AC0034820C /* PencilToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilToolView.swift; sourceTree = "<group>"; };
 		4B4A7DA2227D6CEE0024A07B /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		4B4A7E49227F2FA10024A07B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		4B4A7E81227F2FA10024A07B /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		4B4A7E92227F2FA10024A07B /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
 		4B4A7ECA227F37CE0024A07B /* ColorPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorPicker.storyboard; sourceTree = "<group>"; };
+		4B4A7ECC227FD98C0024A07B /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
+		4B4A7ED1228120C70024A07B /* PictureExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureExporter.swift; sourceTree = "<group>"; };
 		4B7764FC22636C4F00AC7348 /* pixeloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pixeloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7764FF22636C4F00AC7348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B77650122636C4F00AC7348 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			children = (
 				4BFB17502277FD0100507B58 /* Static.swift */,
 				4B4A7DA2227D6CEE0024A07B /* Command.swift */,
+				4B4A7ED1228120C70024A07B /* PictureExporter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -168,8 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				4B2BFD8B22657B0D0034820C /* CanvasVIew.swift */,
-				4B2BFD8D2265901A0034820C /* PaletteView.swift */,
 				4B2BFD8F226598AC0034820C /* PencilToolView.swift */,
+				4B4A7ECC227FD98C0024A07B /* PaletteView.swift */,
+				4B2BFD8D2265901A0034820C /* ColorCollectionView.swift */,
 				4BFB174E2277FC4100507B58 /* pixel.swift */,
 			);
 			path = Views;
@@ -279,12 +285,14 @@
 				4B7765192264446700AC7348 /* CanvasController.swift in Sources */,
 				4B4A7E9D227F2FA10024A07B /* UIColor+Extensions.swift in Sources */,
 				4B2BFD8C22657B0D0034820C /* CanvasVIew.swift in Sources */,
-				4B2BFD8E2265901A0034820C /* PaletteView.swift in Sources */,
+				4B2BFD8E2265901A0034820C /* ColorCollectionView.swift in Sources */,
 				4B77650022636C4F00AC7348 /* AppDelegate.swift in Sources */,
 				4B4A7EC7227F2FA10024A07B /* GradientSlider.swift in Sources */,
 				4B4A7DA3227D6CEE0024A07B /* Command.swift in Sources */,
 				4B4A7EBD227F2FA10024A07B /* ColorPickerViewController.swift in Sources */,
 				4B4A7EA1227F2FA10024A07B /* UIAlertController+Extensions.swift in Sources */,
+				4B4A7ECD227FD98C0024A07B /* PaletteView.swift in Sources */,
+				4B4A7ED2228120C70024A07B /* PictureExporter.swift in Sources */,
 				4B4A7EA0227F2FA10024A07B /* UIApplication+Extensions.swift in Sources */,
 				4BFB174F2277FC4100507B58 /* pixel.swift in Sources */,
 				4B2BFD90226598AC0034820C /* PencilToolView.swift in Sources */,

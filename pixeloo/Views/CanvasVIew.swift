@@ -204,6 +204,31 @@ class CanvasView : SKView{
             }
         }
     }
+    
+    func save() {
+        // TODO
+        print("save")
+        
+        let exporter = PictureExporter(colorArray: GetColorArray(), canvasWidth: c_size.width, canvasHeight: c_size.height)
+        
+        guard let imagedata = exporter.generateThumbnailFromDrawing() else {
+            print("export error")
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(imagedata, nil,nil,nil)
+    }
+    
+    func GetColorArray() -> [UIColor] {
+        var colors = [UIColor]()
+        for ps in points {
+            for p in ps {
+                colors.append(p.color)
+            }
+        }
+        return colors
+    }
+    
 }
 
 public struct CancasSize {

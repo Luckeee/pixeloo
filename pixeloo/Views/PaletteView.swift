@@ -2,278 +2,139 @@
 //  PaletteView.swift
 //  pixeloo
 //
-//  Created by hata on 2019/4/16.
+//  Created by hata on 2019/5/6.
 //  Copyright © 2019 hata. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class PaletteView : UICollectionView  {
+class PaletteView: UIView{
+   
+    // view
+    var collecrionview : ColorCollectionView!
     
-    let Identifier       = "CollectionViewCell"
-    let headerIdentifier = "CollectionHeaderView"
-    let footIdentifier   = "CollectionFootView"
-
-    var colors = [UIColor]()
-    var controller : CanvasController!
+    var colorpicker : UIButton!
     
-    public var trashCollection: UICollectionView!
-    public var trashImage: UIImageView!
+    var currColorView : UIView!
     
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    var trashCollection: UICollectionView!
+    var trashImage: UIImageView!
     
-        super.init(frame: frame, collectionViewLayout:layout)
-        
-        self.backgroundColor = UIColor.lightGray
-        
-        self.delegate = self
-        self.dataSource = self
-        self.dragDelegate = self
-        self.dropDelegate = self
-
-        self.dragInteractionEnabled = true
-        // 注册cell
-        self.register(Palette_Cell.self, forCellWithReuseIdentifier: Identifier)
-        self.register(CollectionFootView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footIdentifier)
-        
-        InitColorList()
-        
-        self.reloadData()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // data
+    var palette_color = UIColor.black
     
     override func didMoveToWindow() {
-        trashCollection.dropDelegate = self
-    }
-    
-    func InitColorList(){
-        for _ in 1...18 {
-            let red = CGFloat(arc4random()%256)/255.0
-            let green = CGFloat(arc4random()%256)/255.0
-            let blue = CGFloat(arc4random()%256)/255.0
-            colors.append(UIColor(red: red, green: green, blue: blue, alpha: 1.0))
-        }
-    }
-    
-    func indexForIdentifier(identifier: UIColor)->Int?{
-        return colors.firstIndex(of: identifier)
-    }
-    
-    func reorderItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView)
-    {
-        let items = coordinator.items
-        if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath
-        {
-            var dIndexPath = destinationIndexPath
-            if dIndexPath.row >= collectionView.numberOfItems(inSection: 0)
-            {
-                dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
-            }
-            collectionView.performBatchUpdates({
-                
-                self.colors.remove(at: sourceIndexPath.row)
-                self.colors.insert(item.dragItem.localObject as! UIColor, at: dIndexPath.row)
-                
-                collectionView.moveItem(at: sourceIndexPath, to: dIndexPath)
-            })
-            coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
-        }
-    }
-    
-    func removeItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView)
-    {
-        collectionView.performBatchUpdates({
-            
-            for item in coordinator.items
-            {
-                guard let identifier = item.dragItem.localObject as? UIColor else {
-                    return
-                }
-                
-                if let index = indexForIdentifier(identifier: identifier){
-                    let indexPath = IndexPath(row: index, section: 0)
-                    colors.remove(at: index)
-                    self.deleteItems(at: [indexPath])
-                }
-            }
-        })
-    }
-    
-}
-
-extension PaletteView:UICollectionViewDelegate {
-    
-    // cell  点击事件
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        palete_color = colors[indexPath.row]
-        print(indexPath.row,palete_color)
-    }
-    
-}
-
-extension PaletteView: UICollectionViewDataSource{
-    // 返回 cell 的数量
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
-    }
-    
-    // 返回每个cell
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier, for: indexPath)
-        cell.backgroundColor = colors[indexPath.row]
-        cell.accessibilityLabel = String(format:"%ditem",indexPath.row)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
-        let footView : CollectionFootView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footIdentifier, for: indexPath) as! CollectionFootView
-        footView.controller = self.controller
-        return footView
-    }
-}
-
-extension PaletteView: UICollectionViewDragDelegate{
-
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        self.backgroundColor = #colorLiteral(red: 0.9299849302, green: 0.9299849302, blue: 0.9299849302, alpha: 1)
         
-        let item = self.colors[indexPath.row]
-        let itemProvider = NSItemProvider(object: NSString(string: String(indexPath.row)))
-        let dragitem = UIDragItem(itemProvider: itemProvider)
-        dragitem.localObject = item
-
-        return [dragitem]
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem]
-    {
-        let item = self.colors[indexPath.row]
-        let itemProvider = NSItemProvider(object: NSString(string: String(indexPath.row)))
-        let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = item
-        return [dragItem]
-    }
-}
-
-extension PaletteView: UICollectionViewDropDelegate{
-    
-    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool
-    {
-        return session.canLoadObjects(ofClass: NSString.self)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-        if collectionView === self{
-            return collectionView.hasActiveDrag ?
-                UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath) :
-                UICollectionViewDropProposal(operation: .forbidden)
-        }
-        else
-        {
-            if collectionView.hasActiveDrag{
-                return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
-            }
-            
-            trashImage.alpha = 0.4
-            return  UICollectionViewDropProposal(operation: .move, intent: .unspecified)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        print("collectionView")
-        let destinationIndexPath: IndexPath
-        if let indexPath = coordinator.destinationIndexPath
-        {
-            destinationIndexPath = indexPath
-        }
-        else
-        {
-            // Get last index path of table view.
-            let section = collectionView.numberOfSections - 1
-            let row = collectionView.numberOfItems(inSection: section)
-            destinationIndexPath = IndexPath(row: row, section: section)
-        }
+        AddTrashView()
+        AddColorPicker()
+        AddColorCollectionView()
+        AddCurrColorView()
         
-        if coordinator.proposal.operation == .move{
-            if coordinator.proposal.intent == .insertAtDestinationIndexPath{
-                self.reorderItems(coordinator: coordinator, destinationIndexPath:destinationIndexPath, collectionView: collectionView)
-            }
-            else{
-                self.removeItems(coordinator: coordinator, destinationIndexPath: destinationIndexPath, collectionView: collectionView)
-            }
-        }
+        SetViewsLayout()
+        
     }
-
-    func collectionView(_ collectionView: UICollectionView, dropSessionDidExit session: UIDropSession) {
-        trashImage.alpha = 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, dropSessionDidEnd session: UIDropSession) {
+    
+    func AddTrashView() {
+        let layout = UICollectionViewFlowLayout()
+        let c_frame = CGRect(x: 0, y: frame.height - 50, width: frame.width, height: 50)
+        trashCollection = UICollectionView(frame: c_frame,collectionViewLayout: layout)
+        trashCollection.backgroundColor = UIColor.clear
+        
+        let i_frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        trashImage = UIImageView(frame: i_frame)
+        trashImage.image = UIImage(named: "trashImage")
         trashImage.alpha = 0
-    }
-}
-
-
-class Palette_Cell: UICollectionViewCell {
-    
-    var select_view: UIImageView!
-    
-    override var isSelected: Bool{
-        didSet{
-            select_view.isHidden = !isSelected
-        }
+        trashCollection.addSubview(trashImage)
+        
+        self.addSubview(trashCollection)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    func AddCurrColorView() {
         
-        select_view = UIImageView()
-        select_view.frame.size = frame.size
-        select_view.frame.origin = CGPoint(x: 0, y: 0)
-        select_view.image = UIImage(named:"selected_icon")
-        self.addSubview(select_view)
-        select_view.isHidden = true
+        let c_frame = CGRect(x: 15, y: 10, width: 30, height: 30)
+        currColorView = UIView(frame: c_frame)
+
+        self.addSubview(currColorView)
+        
+        currColorView.backgroundColor = palette_color
+        
+        currColorView.layer.cornerRadius = 5
+        currColorView.layer.shadowRadius = 1
+        currColorView.layer.shadowOpacity = 0.8
+        currColorView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        currColorView.layer.shadowColor = UIColor.lightGray.cgColor
+        currColorView.layer.masksToBounds = false
     }
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func AddColorCollectionView() {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 60,height: 30)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.footerReferenceSize = CGSize(width: 92, height: 50)
+        
+        let c_frame = CGRect(x: 0, y: 50, width: frame.width, height: frame.height - 100)
+        collecrionview = ColorCollectionView(frame: c_frame,collectionViewLayout: layout)
+        collecrionview.paletteview = self
+        
+        self.addSubview(collecrionview)
+        
+        // layer
+        let layer1 = CALayer()
+        layer1.frame = CGRect(x: 0, y: 49, width: frame.width, height: 1)
+        layer1.backgroundColor = UIColor.lightGray.cgColor
+        
+        let layer2 = CALayer()
+        layer2.frame = CGRect(x: 0, y: frame.height - 50, width: frame.width, height: 1)
+        layer2.backgroundColor = UIColor.lightGray.cgColor
+        
+        layer.addSublayer(layer1)
+        layer.addSublayer(layer2)
     }
     
-}
+    func AddColorPicker() {
 
-class CollectionFootView: UICollectionReusableView {
-    
-    var color_btn : UIButton!
-    var controller : CanvasController!
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.backgroundColor = UIColor.white
-        
-        let c_frame = CGRect(x: 10, y: 10, width: 70, height: 20)
-        
-        color_btn = UIButton(frame: c_frame)
-        color_btn.backgroundColor = UIColor.green
-        
-        self.addSubview(color_btn)
-        
+        // btn
+        let c_frame = CGRect(x: 15, y: 10, width: 30, height: 30)
+        let color_btn = UIButton(frame: c_frame)
+        color_btn.setImage(UIImage(named: "palette"), for: .normal)
         color_btn.addTarget(self, action:#selector(touchSelect(sender:)), for: .touchUpInside)
+        
+        trashCollection.addSubview(color_btn)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    func SetViewsLayout() {
+        // shadow
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.8
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 4
+        
+        //
+        layer.cornerRadius = 10
+        layer.masksToBounds = false
+
     }
     
     @objc func touchSelect (sender: UITapGestureRecognizer){
         let alert = UIAlertController(style: .alert)
-        alert.addColorPicker(color: UIColor(hex: 0xFF2DC6)) { color in self.color_btn.backgroundColor = color }
+        alert.addColorPicker(color: palete_color) { color in self.AddColor(color: color) }
         alert.addAction(title: "Cancel", style: .cancel)
         alert.show()
     }
+    
+    func SelectColor(color:UIColor) {
+        palete_color = color
+        currColorView.backgroundColor = palete_color
+    }
+    
+    func AddColor(color:UIColor){
+        currColorView.backgroundColor = color
+        palete_color = color
+        collecrionview.AddColor(color: color)
+    }
 }
-
