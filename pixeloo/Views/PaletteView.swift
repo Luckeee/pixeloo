@@ -21,9 +21,6 @@ class PaletteView: UIView{
     var trashCollection: UICollectionView!
     var trashImage: UIImageView!
     
-    // data
-    var palette_color = UIColor.black
-    
     var colors = [UIColor]()
     
     let Identifier = "CollectionViewCell"
@@ -139,19 +136,19 @@ class PaletteView: UIView{
 
     @objc func touchSelect (sender: UITapGestureRecognizer){
         let alert = UIAlertController(style: .alert)
-        alert.addColorPicker(color: palete_color) { color in self.AddColor(color: color) }
+        alert.addColorPicker(color: palette_color) { color in self.AddColor(color: color) }
         alert.addAction(title: "Cancel", style: .cancel)
         alert.show()
     }
     
     func SelectColor(color:UIColor) {
-        palete_color = color
-        currColorView.backgroundColor = palete_color
+        palette_color = color
+        currColorView.backgroundColor = palette_color
     }
     
     func AddColor(color:UIColor){
         currColorView.backgroundColor = color
-        palete_color = color
+        palette_color = color
         colors.append(color)
         collectionview.insertItems(at: [IndexPath(row: colors.count - 1, section: 0)])
     }

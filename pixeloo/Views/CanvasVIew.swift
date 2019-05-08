@@ -108,15 +108,15 @@ class CanvasView : SKView{
     
     func handleTouch(touch : UITouch, type : Int) {
         
-        var tar_color = palete_color
+        var tar_color = palette_color
         
         switch pen_type {
         case .pencil:
-            tar_color = palete_color
+            tar_color = palette_color
         case .eraser:
             tar_color = UIColor.white
         default:
-            tar_color = palete_color
+            tar_color = palette_color
         }
         
         var poses : [Point]

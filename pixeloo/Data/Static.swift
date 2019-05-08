@@ -37,6 +37,6 @@ let PIPETTE_TOOL_OFFSET: CGFloat = 10.0
 
 // 全局变量
 
-var palete_color : UIColor = UIColor.black
+var palette_color : UIColor = UIColor.black
 
 var pen_type = PENTYPE.pencil
