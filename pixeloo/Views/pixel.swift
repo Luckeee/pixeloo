@@ -18,7 +18,7 @@ class Pixel: SKShapeNode {
         self.strokeColor = UIColor.black
         
         // FIXME: Adjust line width to scroll rate
-        self.lineWidth = 0.2
+        self.lineWidth = 0.5
         
         let rect = UIBezierPath(rect: CGRect(x: 0, y: 0, width: PIXEL_SIZE, height: PIXEL_SIZE))
         self.path = rect.cgPath

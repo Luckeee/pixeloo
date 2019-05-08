@@ -27,10 +27,6 @@ class PictureExporter: NSObject {
         setUpRawPixelArray(colorArray: colorArray)
     }
 
-//    convenience init(drawing: Drawing) {
-//        self.init(colorArray: drawing.colorArray, canvasWidth: Int(drawing.width), canvasHeight: Int(drawing.height))
-//    }
-
     private func setUpRawPixelArray(colorArray: [UIColor]) {
         colorArray.forEach { (color) in
             do {

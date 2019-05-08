@@ -11,12 +11,14 @@ import UIKit
 
 class PencilToolView: UIView {
     
-    var Tools = ["pencil","eraser","back", "forward" , "ico_save"]
+    var Tools = ["pencil","eraser","back", "forward" , "ico_menu"]
     var selectionview : UIView!
     
     var btns = [UIButton]()
     
     let cell = CGSize(width: 40, height: 40)
+    
+    var alertdelegate : AlertMenuDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,8 +86,8 @@ class PencilToolView: UIView {
             canvas.forward()
         }
         
-        if str == "ico_save" {
-            canvas.save()
+        if str == "ico_menu" {
+            alertdelegate?.ShowExitAlert()
         }
     }
     
@@ -121,4 +123,6 @@ class PencilToolView: UIView {
     
 }
 
-
+protocol AlertMenuDelegate {
+    func ShowExitAlert() 
+}
